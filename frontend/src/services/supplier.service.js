@@ -1,6 +1,8 @@
 import axios from "axios";
+import { BASE_URL, PORT } from "../config/constants.cfg";
 
-const URL_API = "http://localhost:3000/api/suppliers";
+// const URL_API = `http://${BASE_URL}:${PORT}/api/suppliers`;
+const URL_API = `https://${BASE_URL}:${PORT}/api/suppliers`;
 
 export function getSupplierInfo() {
   return axios.get(`${URL_API}`, { withCredentials: true });
