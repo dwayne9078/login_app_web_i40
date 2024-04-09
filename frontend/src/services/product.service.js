@@ -1,8 +1,8 @@
 import axios from "axios";
 import { BASE_URL, PORT } from "../config/constants.cfg";
 
-const URL_API = `http://${BASE_URL}:${PORT}/api/products`;
-// const URL_API = `https://${BASE_URL}:${PORT}/api/products`;
+// const URL_API = `http://${BASE_URL}:${PORT}/api/products`;
+const URL_API = `https://${BASE_URL}:${PORT}/api/products`;
 
 export function newProduct(data) {
   return axios.post(`${URL_API}`, data, { withCredentials: true });
