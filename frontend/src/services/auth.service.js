@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL, PORT } from "../config/constants.cfg";
 
 // const URL_API = `http://${BASE_URL}:${PORT}/api/auth`;
-const URL_API = `https://${BASE_URL}:${PORT}/api/auth`;
+const URL_API = `https://${BASE_URL}/api/auth`;
 export function addUser(user) {
   return axios.post(`${URL_API}/register`, user);
 }
