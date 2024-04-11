@@ -15,10 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [
-      "https://login-b2f58.web.app",
-      "https://login-b2f58.firebaseapp.com/",
-    ],
+    origin: "https://login-b2f58.web.app",
     // preflightContinue: true,
     credentials: true,
   })
