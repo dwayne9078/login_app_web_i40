@@ -20,7 +20,7 @@ app.use(
     credentials: true,
   })
 );
-app.get("/hello", (req, res) => res.send("OLAMUNDO"));
+app.get("/hello", (req, res) => res.send(req.cookies.__session));
 app.get("/", (req, res) => {
   const cookies = req.cookies;
   res.send(cookies);
