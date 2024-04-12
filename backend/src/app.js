@@ -16,11 +16,12 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: "https://login-b2f58.web.app",
+    // origin: "http://localhost:5173",
     // preflightContinue: true,
     credentials: true,
   })
 );
-app.get("/hello", (req, res) => res.send(req.cookies.__session));
+app.get("/hello", (req, res) => res.send(req.cookies["__session"]));
 app.get("/", (req, res) => {
   const cookies = req.cookies;
   res.send(cookies);
