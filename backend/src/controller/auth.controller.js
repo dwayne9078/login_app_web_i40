@@ -96,7 +96,12 @@ export const logout = async (req, res) => {
   const cookieToken = req.cookies.token;
 
   if (cookieToken) {
-    res.clearCookie("token", { httpOnly: true, maxAge: 0 });
+    res.clearCookie("token", {
+      httpOnly: true,
+      maxAge: 0,
+      sameSite: "none",
+      secure: true,
+    });
     res.send({ mensaje: "SESION FINALIZADA CON EXITO" });
   } else {
     res.send({ mensaje: "NO EXISTEN TOKENS" });
