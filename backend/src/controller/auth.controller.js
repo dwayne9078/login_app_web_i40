@@ -41,6 +41,8 @@ export const register = async (req, res) => {
             console.log(err);
           } else {
             res.cookie("token", token, {
+              sameSite: "none",
+              secure: true,
               httpOnly: true,
               maxAge: tokenExpirationTime,
             });
@@ -72,6 +74,8 @@ export const login = async (req, res) => {
             (err, token) => {
               if (!err) {
                 res.cookie("token", token, {
+                  sameSite: "none",
+                  secure: true,
                   httpOnly: true,
                   maxAge: tokenExpirationTime,
                 });
@@ -82,11 +86,10 @@ export const login = async (req, res) => {
             }
           )
         : res.send({ mensaje: "Verifica tu Contraseña" });
-    })
+    });
   } else {
-    res.send({mensaje: "Usuario no Encontrado"})
+    res.send({ mensaje: "Usuario no Encontrado" });
   }
-
 };
 
 export const logout = async (req, res) => {
