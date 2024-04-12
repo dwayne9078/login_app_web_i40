@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (isAuth) {
-      // setTimeout(nav, 2000, "/product");
+      setTimeout(nav, 2000, "/product");
     }
   }, [isAuth]);
 
