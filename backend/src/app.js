@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://login-b2f58.web.app/",
+    origin: "https://login-db944.web.app",
     // origin: "http://localhost:5173",
     // preflightContinue: true,
     credentials: true,
