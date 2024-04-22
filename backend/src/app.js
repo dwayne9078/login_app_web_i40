@@ -26,6 +26,14 @@ app.get("/", (req, res) => {
   const cookies = req.cookies;
   res.send(cookies);
 });
+
+app.post("/teclado", (req, res) => {
+  const clave = req.body.clave;
+
+  console.log(clave);
+  res.send(clave);
+});
+
 app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/suppliers", supplierRoute);
